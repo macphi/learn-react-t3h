@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import LayoutMovie from './components/Layout'
-import ListMovies from './components/List'
-import PaginationMovie from "./components/Pagination";
-import { api } from './services/api';
-import { Skeleton } from "antd";
+import GlobalContext from "../context/index";
+import { api } from "../services/api";
 
-const AppMovies = () => {
+
+const MovieProvider = (props) => {
+
     const [loading, setLoading] = useState(true)
     const [dataMovies, setDataMovies] = useState([])
     const [page, setPage] = useState(1)
@@ -41,7 +40,7 @@ const AppMovies = () => {
             setLoading(false)
         }
         getDataFromApi()// running function call api
-    }, [page, loading]) // [] dieu kien de chay useEffect
+    }, [page, loading,clickPage]) // [] dieu kien de chay useEffect
 
     // test xem lay duoc data chua
     // console.log('data movies',dataMovies)
@@ -59,21 +58,11 @@ const AppMovies = () => {
     }
 
     return (
-        <LayoutMovie>
-            {loading ? (
-                <Skeleton active />) : (
-                <>
-                    <ListMovies movies={dataMovies} />
-                    <PaginationMovie
-                        current={page}
-                        total={totalItems}
-                        change={changePage}
-                    />
-                </>
-            )}
-        </LayoutMovie>
+        <GlobalContext.Provider value={{ dataMovies, loading, page, totalItems, changePage }}>
+            {props.children}
+        </GlobalContext.Provider>
     )
-}
 
-export default AppMovies
+}
+export default React.memo(MovieProvider)
 

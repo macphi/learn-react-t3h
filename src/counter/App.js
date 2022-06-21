@@ -28,7 +28,7 @@ export default class AppCounter extends React.Component {
             this.setState({ count: this.state.count + val })
         }
     }
-    // chi su dung torng class component -ke thua cua React.Component
+    // chi su dung trong class component -ke thua cua React.Component
     render() {
         // hien thi React DOM( JSX)
         return (

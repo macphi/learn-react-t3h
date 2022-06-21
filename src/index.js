@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
-import 'antd/dist/antd.css'
-import App from './hooks/movies2/App'
+import 'antd/dist/antd.min.css'
+import App from './movies/index'
 import reportWebVitals from './reportWebVitals';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
