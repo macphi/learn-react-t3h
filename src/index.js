@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'antd/dist/antd.min.css'
-import App from './redux/counter/index'
+import App from './redux/counter-toolkit/index'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
