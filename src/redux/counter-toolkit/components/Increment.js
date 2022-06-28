@@ -9,7 +9,7 @@ const IncrementCounter = () => {
 
 
     const clickIncrement = () => {
-        dispatch(increment())
+        dispatch(increment(count))
     }
     return (
         <button type="button" onClick={() => clickIncrement()}> + </button>
