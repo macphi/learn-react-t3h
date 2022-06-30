@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'antd/dist/antd.min.css'
-import App from './redux/weather/App'
-import reportWebVitals from './reportWebVitals';
+import App from './movies/index'
+import reportWebVitals from './movies/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
