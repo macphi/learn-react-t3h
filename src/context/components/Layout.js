@@ -1,5 +1,5 @@
-import React from "react";
-import { Layout } from "antd";
+import React from 'react';
+import { Layout } from 'antd';
 
 const LayoutComponent = (props) => {
     return (
@@ -8,4 +8,4 @@ const LayoutComponent = (props) => {
         </Layout>
     )
 }
-export default React.memo(LayoutComponent)
+export default React.memo(LayoutComponent);

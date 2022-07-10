@@ -1,14 +1,14 @@
-import { Navigate, useOutlet } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
-import LayoutMovie from './Layout'
+import { Navigate, useOutlet } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
-export const ProtectedLayout = ({ children }) => {
-    const { user } = useAuth()
-    const outlet = useOutlet()
+export const ProtectedLayout = ({children}) => {
+    const { user } = useAuth();
+    const outlet = useOutlet();
 
-    if (user === null) {
-        return <Navigate to='/login' />
+    if(user === null){
+        return <Navigate to="/login" />
     }
+
     return (
         <>
             <>
@@ -17,6 +17,4 @@ export const ProtectedLayout = ({ children }) => {
             {outlet}
         </>
     )
-
 }
-

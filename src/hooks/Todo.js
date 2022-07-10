@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-// Trien khai function component
+// trien khai function component
 // hooks chi lam viec voi function component
+
 
 const TodoApp = () => {
     // khai bao state
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
     // count: ten cua state
-    // setCount: ham thay doi state / trong fnc khong co setState
-    // useState(0): 0 gia tri mac dinh cua state
+    // setCount: ham thay doi state / trong fnc ko co setState
+    // useState(0) : 0 gia tri mac dinh cua state
     // useState tra ve 1 mang
 
     const changeCount = (type) => {
-        if (type === 1) {
-            setCount(count + 1) // tang state len 1 gia tri
+        if(type === 1){
+            setCount(count + 1); // tang state len 1 gia tri
         } else {
-            setCount(count - 1) // giam state xuong 1 gia tri
+            setCount(count - 1); // giam state xuong 1 gia tri
         }
     }
 
@@ -28,6 +29,4 @@ const TodoApp = () => {
     )
 }
 
-export default React.memo(TodoApp)
-
-
+export default React.memo(TodoApp);

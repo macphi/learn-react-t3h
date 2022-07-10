@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col, Pagination } from 'antd'
+import React from 'react';
+import { Row, Col, Pagination } from 'antd';
 
 const PaginationMovie = (props) => {
     return (
@@ -11,10 +11,9 @@ const PaginationMovie = (props) => {
                     showSizeChanger={false}
                     pageSize={20}
                     onChange={p => props.changePage(p)}
-                />;
+                />
             </Col>
         </Row>
     )
 }
-
-export default React.memo(PaginationMovie)
+export default React.memo(PaginationMovie);

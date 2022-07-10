@@ -3,9 +3,10 @@ import { api } from '../../services/api';
 import { Skeleton } from 'antd';
 import loadable from '@loadable/component'
 
-const LayoutMovie = loadable(() => import('../../components/Layout'))
-const ListDataMovies = loadable(() => import('../../components/ListMovies'))
-const PaginationMovie = loadable(() => import('../../components/Pagination'))
+const LayoutMovie     = loadable(() => import('../../components/Layout'));
+const ListDataMovies  = loadable(() => import('../../components/ListMovies'));
+const PaginationMovie = loadable(() => import('../../components/Pagination'));
+
 
 const UpComingMovies = () => {
     const [loading, setLoading] = useState(true);
@@ -13,21 +14,21 @@ const UpComingMovies = () => {
     const [page, setPage] = useState(1);
     const [totalPage, setTotalPage] = useState(0);
     const [totalResult, setTotalResult] = useState(0);
-    const [clickPage, setClickPage] = useState(false)
+    const [clickPage, setClickPage] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
-            setLoading(true)
+            setLoading(true);
             const data = await api.getDataUpcomingMovies(page);
-            if (data.hasOwnProperty('results')) {
+            if(data.hasOwnProperty('results')){
                 setComingMovies(data['results']);
             }
-            if (page === 1 && clickPage === false) {
-                if (data.hasOwnProperty('total_pages')) {
+            if(page === 1 && clickPage === false) {
+                if(data.hasOwnProperty('total_pages')){
                     setTotalPage(data['total_pages'])
                 }
-                if (data.hasOwnProperty('total_results')) {
-                    setTotalResult(data['total_results'])
+                if(data.hasOwnProperty('total_results')){
+                    setTotalResult(data['total_results']);
                 }
             }
             setLoading(false);
@@ -36,13 +37,13 @@ const UpComingMovies = () => {
     }, [page, clickPage]);
 
     const changePage = p => {
-        if (p >= 1 && p <= totalPage) {
-            setClickPage(true)
-            setPage(p) // cap nhat lai state page - useEffect chay lai
+        if( p >= 1 && p <= totalPage){
+            setClickPage(true);
+            setPage(p); // cap nhat lai state page - useEffect chay lai
         }
     }
 
-    if (loading) {
+    if(loading){
         return (
             <LayoutMovie>
                 <Skeleton active />

@@ -1,18 +1,18 @@
-import React from "react";
-import PropTypes from'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+
 export default class ListTodo extends React.Component {
     render() {
-        let color  = { color: 'red' }
         return (
             <>
                 <ul className="list-todo">
-                    {this.props.todo.map((item, index) => (
-                        <li key={index}>
+                    {this.props.todo.map( item => (
+                        <li key={item.id}>
                             <span className={item.done ? 'color-done' : ''}>{item.name}</span>
-                            <span onClick={() => this.props.finish(item.id)}>[Done]</span>
-                            <span onClick={() => this.props.remove(item.id)}>[Delete]</span>
-                        </li>
-                    ))}
+                            <span onClick={() => this.props.finish(item.id)}>[done]</span>
+                            <span onClick={()=> this.props.remove(item.id)} >[delete]</span>
+                     </li>
+                    ) )}
                 </ul>
             </>
         )

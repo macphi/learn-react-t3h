@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
-const GlobalContext = React.createContext() // truyen gia tri mac dinh - khong truyen
-export default GlobalContext
+const GlobalContext = React.createContext(); // truyen gia mac dinh - ko truyen
+export default GlobalContext;

@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from 'prop-types'
-import { Row, Col } from 'antd'
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Row, Col } from 'antd';
 
 const LayoutCorona = (props) => {
-    return (
+    return(
         <Row>
             <Col span={20} offset={2}>
                 {props.children}
@@ -15,4 +14,4 @@ const LayoutCorona = (props) => {
 LayoutCorona.propTypes = {
     children: PropTypes.node.isRequired
 }
-export default React.memo(LayoutCorona)
+export default React.memo(LayoutCorona);

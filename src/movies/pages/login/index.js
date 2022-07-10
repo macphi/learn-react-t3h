@@ -1,24 +1,22 @@
-import React from "react";
-import { Row, Col, Button, Form, Input } from 'antd'
-import { useAuth } from "../../hooks/useAuth";
-
-
+import React from 'react';
+import { Row, Col, Button, Form, Input } from 'antd';
+import { useAuth } from '../../hooks/useAuth';
 
 const LoginPage = () => {
-    const { login } = useAuth() //tu viet
+    const { login } = useAuth(); // tu viet
 
     const onFinish = (values) => {
-        console.log('Success', values)
+        //console.log('Success:', values);
         login(values)
-    }
+    };
+    
     const onFinishFailed = (errorInfo) => {
-        console.log('Failer:', errorInfo)
-    }
+        console.log('Failed:', errorInfo);
+    };
 
     return (
-        <Row style={{ marginTop: '30px' }}>
+        <Row style={{marginTop: '30px'}}>
             <Col span={12} offset={6}>
-
                 <Form
                     name="basic"
                     labelCol={{
@@ -33,15 +31,15 @@ const LoginPage = () => {
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
                     autoComplete="off"
-                >
+                    >
                     <Form.Item
                         label="Username"
                         name="username"
                         rules={[
-                            {
-                                required: true,
-                                message: 'Please input your username!',
-                            },
+                        {
+                            required: true,
+                            message: 'Please input your username!',
+                        },
                         ]}
                     >
                         <Input />
@@ -51,30 +49,19 @@ const LoginPage = () => {
                         label="Password"
                         name="password"
                         rules={[
-                            {
-                                required: true,
-                                message: 'Please input your password!',
-                            },
+                        {
+                            required: true,
+                            message: 'Please input your password!',
+                        },
                         ]}
                     >
                         <Input.Password />
                     </Form.Item>
-                    {/* Phai them Checkbox trong import from */}
-                    {/* <Form.Item
-                        name="remember"
-                        valuePropName="checked"
-                        wrapperCol={{
-                            offset: 8,
-                            span: 16,
-                        }}
-                    >
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item> */}
 
                     <Form.Item
                         wrapperCol={{
-                            offset: 8,
-                            span: 16,
+                        offset: 8,
+                        span: 16,
                         }}
                     >
                         <Button type="primary" htmlType="submit">
@@ -82,12 +69,8 @@ const LoginPage = () => {
                         </Button>
                     </Form.Item>
                 </Form>
-
             </Col>
         </Row>
     )
 }
-export default React.memo(LoginPage)
-
-
-
+export default React.memo(LoginPage);

@@ -1,5 +1,1 @@
-export const KEY_TOKEN = 'abc123ABC123'
-
-
-
-
+export const KEY_TOKEN = 'abc123ABC123';

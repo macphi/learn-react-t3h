@@ -1,29 +1,27 @@
-import React from "react";
-import LayoutComponent from './components/Layout'
-import HeaderComponent from './components/partials/Header'
-import ContentComponent from './components/partials/Content'
-import FooterComponent from './components/partials/Footer'
-import MenuHeaderProvider from "./provider/MenuHeaderProvider";
-import BreadcrumbProvider from "./provider/BreadcrumbProvider";
+import React from 'react';
+import LayoutComponent from './components/Layout';
+import HeaderComponent from './components/partials/Header';
+import ContentComponent from './components/partials/Content';
+import FooterComponent from './components/partials/Footer';
+import MenuHeaderProvider from './provider/MenuHeaderProvider';
+import BreadcrumbProvider from './provider/BreadcrumbProvider';
 
-import './app.css'
+import './app.css';
 
 const AppContext = () => {
     return (
         <LayoutComponent>
-            {/* chi co trong component header nhan data tu provider */}
+            {/* chi co component Header nhan dc data tu provider */}
             <MenuHeaderProvider>
-                <HeaderComponent />
+                <HeaderComponent/>
             </MenuHeaderProvider>
             <BreadcrumbProvider>
                 <ContentComponent>
-                    <p>2 Content</p>
+                    <p> content </p>
                 </ContentComponent>
-            </BreadcrumbProvider>4
-
-            <FooterComponent />
-
+            </BreadcrumbProvider>
+            <FooterComponent/>
         </LayoutComponent>
     )
 }
-export default React.memo(AppContext)
+export default React.memo(AppContext);

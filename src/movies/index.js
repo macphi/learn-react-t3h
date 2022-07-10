@@ -1,10 +1,10 @@
-import React from "react";
-import RouteMovies from './routes/web-2'
+import React from 'react';
+import RouteMovies from './routes/web-2';
+import './index.css'
 
 const AppMovies = () => {
     return (
-            <RouteMovies />
-  
+        <RouteMovies/>
     )
 }
-export default AppMovies
+export default AppMovies;

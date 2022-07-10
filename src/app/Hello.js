@@ -1,6 +1,6 @@
 const HelloWord = () => {
     return (
-        <h1>Hello Word</h1>
+        <h1>Hello word</h1>
     )
 }
-export default HelloWord
+export default HelloWord;

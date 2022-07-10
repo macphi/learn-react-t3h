@@ -1,21 +1,22 @@
-import React from "react";
-import { Row, Col, Card, Skeleton } from 'antd'
+import React from 'react';
+import { Row, Col, Card, Skeleton } from 'antd';
 
-const { Meta } = Card
+const { Meta } = Card;
+
 const ListDataMovies = ({ movies }) => {
 
-    if (movies.length === 0) {
+    if(movies.length === 0){
         return (
             <Skeleton active />
         )
     }
 
     return (
-        <Row style={{ margin: '20px 0px' }}>
+        <Row style={{margin: '20px 0px'}}>
             {movies.map((item, index) => (
                 <Col span={6} key={index}>
                     <Card
-                        style={{ marginRight: '5px', marginBottom: '10px' }}
+                        style={{marginRight: "5px", marginBottom: "20px"}}
                         hoverable
                         cover={<img alt={item.title} src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />}
                     >
@@ -23,8 +24,8 @@ const ListDataMovies = ({ movies }) => {
                     </Card>
                 </Col>
             ))}
-
         </Row>
     )
 }
-export default React.memo(ListDataMovies)
+
+export default React.memo(ListDataMovies);

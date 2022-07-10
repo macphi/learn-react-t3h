@@ -1,22 +1,20 @@
-import React from "react";
-import { Layout, Menu } from "antd";
-import GlobalContext from "../../global/context";
+import React from 'react';
+import { Layout, Menu } from 'antd';
+import GlobalContext from '../../global/context';
 
-const { Header } = Layout
-
-
+const { Header } = Layout;
 
 const HeaderComponent = () => {
     return (
         <GlobalContext.Consumer>
-            {context => (
+            {menu => (
                 <Header>
                     <div className="logo" />
                     <Menu
                         theme="dark"
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
-                        items={context.map((item, index) => {
+                        defaultSelectedKeys={['1']}
+                        items={menu.map((item, index) => {
                             const key = index + 1;
                             return {
                                 key,
@@ -27,6 +25,7 @@ const HeaderComponent = () => {
                 </Header>
             )}
         </GlobalContext.Consumer>
+        
     )
 }
-export default React.memo(HeaderComponent)
+export default React.memo(HeaderComponent);

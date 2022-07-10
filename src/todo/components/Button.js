@@ -1,11 +1,12 @@
-import React from "react";
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class ButtonTodo extends React.Component {
     render() {
         return (
             <>
-                <button className="btn-todo"
+                <button
+                    className="btn-todo"
                     type={this.props.type}
                     onClick={() => this.props.click()}
                 >
@@ -15,12 +16,12 @@ export default class ButtonTodo extends React.Component {
         )
     }
 }
-//gan gia tri mac dinh cho props component
+// gan gia tri mac dinh cho props component
 ButtonTodo.defaultProps = {
-    type: 'button'
+    type: "button"
 }
 ButtonTodo.propTypes = {
-    type: PropTypes.string,
+    type: PropTypes.string.isRequired,
     click: PropTypes.func.isRequired,
     children: PropTypes.string.isRequired
 }

@@ -1,11 +1,10 @@
-import React from "react";
-import { Row, Col, Pagination } from "antd";
+import React from 'react';
+import { Row, Col, Pagination } from 'antd';
 
 
 const PaginationMovies = (props) => {
-
     return (
-        <Row style={{ margin: '20px,0px'  }}>
+        <Row style={{margin: '20px 0px'}}>
             <Col span={24}>
                 <Pagination
                     current={props.current}
@@ -16,8 +15,6 @@ const PaginationMovies = (props) => {
                 />
             </Col>
         </Row>
-
     )
-
 }
-export default React.memo(PaginationMovies)
+export default React.memo(PaginationMovies);

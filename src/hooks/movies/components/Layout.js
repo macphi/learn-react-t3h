@@ -1,7 +1,8 @@
-import React from "react";
-import { Row, Col } from 'antd'
+import React from 'react';
+import { Row, Col } from 'antd';
 
-const LayoutMovie = (props) => {
+
+const LayoutMovies = (props) => {
     return (
         <Row>
             <Col span={20} offset={2}>
@@ -10,4 +11,4 @@ const LayoutMovie = (props) => {
         </Row>
     )
 }
-export default React.memo(LayoutMovie)
+export default React.memo(LayoutMovies);

@@ -1,23 +1,25 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-export default class InputTodo extends React.Component{
-    render(){
-        return(
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class InputTodo extends React.Component {
+
+    render() {
+        return (
             <>
                 <input
-                 className='input-todo'
-                 type={this.props.type} 
-                 name={this.props.name} 
-                 onChange={this.props.change}
-                 value={this.props.val}
-                 />
+                    className="input-todo"
+                    type={this.props.type}
+                    name={this.props.name}
+                    value={this.props.val}
+                    onChange={this.props.change}
+                />
             </>
         )
     }
 }
 InputTodo.propTypes = {
     type: PropTypes.string.isRequired,
-    naem: PropTypes.string,
+    name: PropTypes.string,
     val: PropTypes.string,
     change: PropTypes.func.isRequired
 }

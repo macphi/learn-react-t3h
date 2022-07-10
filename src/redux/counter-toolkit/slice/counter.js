@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = { value: 0 }
+const initialState = { value: 1 }
 
 const counterSlice = createSlice({
     name: 'counter',
@@ -8,11 +8,12 @@ const counterSlice = createSlice({
     reducers: { // reducer
         // action
         increment(state, action) {
-            state.value++ //= action.payload
+            //console.log(action);
+            state.value += action.payload;
         }
     }
-})
+});
 
-export const { increment } = counterSlice.actions // lay ra action
-
-export default counterSlice.reducer // lay ra reducer
+export const { increment } = counterSlice.actions; // lay ra action
+export const counterSelector = state => state.counter.value;
+export default counterSlice.reducer; // lay ra reducer

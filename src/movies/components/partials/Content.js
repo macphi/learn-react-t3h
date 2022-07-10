@@ -1,13 +1,16 @@
-import React from "react";
-import { Layout } from "antd";
-import BreadcrumbComponent from "./Breadcrumb";
+import React from 'react';
+import { Layout } from 'antd';
+import BreadcrumbComponent from './Breadcrumb';
 
-
-const { Content } = Layout
+const { Content } = Layout;
 
 const ContentComponent = (props) => {
     return (
-        <Content style={{ padding: '0 50px' }}>
+        <Content
+            style={{
+                padding: '0 50px',
+            }}
+        >
             <BreadcrumbComponent/>
             <div className="site-layout-content">
                 {props.children}
@@ -15,4 +18,4 @@ const ContentComponent = (props) => {
         </Content>
     )
 }
-export default React.memo(ContentComponent)
+export default React.memo(ContentComponent);

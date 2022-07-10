@@ -1,13 +1,13 @@
-import React from "react";
-import LayoutCorona from './components/Layout'
-import GlobalCorona from './components/Global'
-import CountriesCorona from "./components/Countries";
-import { api } from './services/api'
+import React from 'react';
+import LayoutCorona from './components/Layout';
+import GlobalCorona from './components/Global';
+import CountriesCorona from './components/Countries';
+import { api } from './services/api';
 
-export default class AppCorona extends React.PureComponent {
-
-    constructor(props) {
-        super(props)
+export default class AppCorona extends React.PureComponent
+{
+    constructor(props){
+        super(props);
         this.state = {
             global: {},
             countries: []
@@ -15,24 +15,23 @@ export default class AppCorona extends React.PureComponent {
     }
 
     async componentDidMount(){
-        //call api
-        const data = await api.getDataVirusCorona()
-        if (data.hasOwnProperty('Global')){
-            this.setState({global: data.Global})
+        // call api
+        const data = await api.getDataVirusCorona();
+        if(data.hasOwnProperty('Global')){
+            this.setState({global: data.Global});
         }
         if(data.hasOwnProperty('Countries')){
-            this.setState({countries: data.Countries})
+            this.setState({countries: data.Countries});
         }
     }
 
     render() {
-        console.log(this.state.global)
+        //console.log(this.state.global);
         return (
             <LayoutCorona>
                 <GlobalCorona global={this.state.global} />
-                <CountriesCorona countries={this.state.countries}/>
+                <CountriesCorona countries={this.state.countries} />
             </LayoutCorona>
         )
     }
-
 }

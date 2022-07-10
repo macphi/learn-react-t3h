@@ -1,10 +1,10 @@
-//  Su dung function
+// su dung function
 
 const Button = (props) => {
-    //trong function component khong co method render nhu ben class component
+    // trong function component ko co method render nhu ben class component
     return (
         <>
-            {/* day la cu phao JSX - khong phai la html */}
+            {/* day la cu phap JSX - khong phai HTML */}
             <button
                 type={props.type}
                 className={props.class}
@@ -16,4 +16,4 @@ const Button = (props) => {
     )
 }
 
-export default Button
+export default Button;

@@ -1,5 +1,5 @@
-import React from "react";
-import LayoutMovie from '../../components/Layout'
+import React from 'react';
+import LayoutMovie from '../../components/Layout';
 
 
 const PopularMovies = () => {
@@ -9,4 +9,4 @@ const PopularMovies = () => {
         </LayoutMovie>
     )
 }
-export default React.memo(PopularMovies)
+export default React.memo(PopularMovies);

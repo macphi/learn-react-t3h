@@ -1,16 +1,19 @@
-import React from "react";
-import HeaderTodo from "./partials/Header";
-import FooterTodo from "./partials/Footer";
-import PropTypes from'prop-types'
-import './styles/layout.css'
+import React from 'react';
+import HeaderTodo from './partials/Header';
+import FooterTodo from './partials/Footer';
+import PropTypes from 'prop-types';
+
+import './styles/layout.css';
+
+
 class LayoutTodo extends React.Component {
     render() {
         return (
             <>
                 <div className="container">
                     <HeaderTodo/>
-                        {this.props.children}
-                        <FooterTodo/>
+                    {this.props.children}
+                    <FooterTodo/>
                 </div>
             </>
         )
@@ -19,5 +22,4 @@ class LayoutTodo extends React.Component {
 LayoutTodo.propTypes = {
     children: PropTypes.element.isRequired
 }
-
-export default LayoutTodo
+export default LayoutTodo;

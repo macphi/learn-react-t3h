@@ -1,19 +1,20 @@
-import React from "react";
-import { useLocation } from 'react-router-dom'
-import { Breadcrumb } from "antd";
+import React from 'react';
+import { useLocation } from "react-router-dom";
+import { Breadcrumb } from 'antd';
 
 const BreadcrumbComponent = () => {
-    const { pathname } = useLocation()
-    let newPath = pathname.substring(1)
-    newPath = newPath === '' ? 'Popular' : newPath
+    const { pathname } = useLocation();
+    let newPath = pathname.substring(1);
+    newPath     = newPath === '' ? 'popular' : newPath;
     return (
-        <Breadcrumb style={{
-            margin: '16px 0'
-        }}>
+        <Breadcrumb
+            style={{
+                margin: '16px 0',
+            }}
+        >
             <Breadcrumb.Item>Movies</Breadcrumb.Item>
             <Breadcrumb.Item>{newPath}</Breadcrumb.Item>
         </Breadcrumb>
     )
 }
-
-export default React.memo(BreadcrumbComponent)
+export default React.memo(BreadcrumbComponent);
